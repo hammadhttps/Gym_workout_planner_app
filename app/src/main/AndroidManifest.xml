@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._21l_5812_A1">
         <activity
+            android:name=".WorkOut_Summary"
+            android:exported="false" />
+        <activity
+            android:name=".Nutrition_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Slot_Booking_Activity"
             android:exported="false" />
         <activity
