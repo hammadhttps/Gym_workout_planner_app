@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._21l_5812_A1">
         <activity
+            android:name=".Workout_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_onboarding"
+            android:exported="false" />
+        <activity
+            android:name=".Rotate_logo"
+            android:exported="false"
+            android:label="@string/title_activity_rotate_logo"
+            android:theme="@style/Theme._21l_5812_A1" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
