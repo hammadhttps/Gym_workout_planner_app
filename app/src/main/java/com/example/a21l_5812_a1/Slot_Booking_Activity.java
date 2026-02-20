@@ -5,14 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
@@ -20,7 +16,7 @@ public class Slot_Booking_Activity extends AppCompatActivity {
 
 
     private TextView txtWorkoutName, txtSelectedSlots;
-    private CheckBox chkMorning, chkNight, chkEvening;
+    private Button btnMorning, btnAfternoon, btnEvening;
     private Button btnProceedNutrition, btnConfirmWorkout;
     private String workoutName;
     private int selectedSlotCount = 0;
@@ -48,9 +44,9 @@ public class Slot_Booking_Activity extends AppCompatActivity {
     {
         txtWorkoutName = findViewById(R.id.txtWorkoutName);
         txtSelectedSlots = findViewById(R.id.txtSelectedSlots);
-        chkMorning = findViewById(R.id.chkMorning);
-        chkNight = findViewById(R.id.chkNight);
-        chkEvening = findViewById(R.id.chkEvening);
+        btnMorning = findViewById(R.id.btnMorning);
+        btnAfternoon = findViewById(R.id.btnAfternoon);
+        btnEvening = findViewById(R.id.btnEvening);
         btnProceedNutrition = findViewById(R.id.btnProceedNutrition);
         btnConfirmWorkout = findViewById(R.id.btnConfirmWorkout);
     }
@@ -60,18 +56,30 @@ public class Slot_Booking_Activity extends AppCompatActivity {
         View.OnClickListener slotClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Button clickedButton = (Button) v;
+                String slot = clickedButton.getText().toString();
+
+                if (selectedSlots.contains(slot)) {
+                    selectedSlots.remove(slot);
+                    clickedButton.setBackgroundResource(R.drawable.button_rounded_white);
+                } else {
+                    selectedSlots.add(slot);
+                    clickedButton.setBackgroundResource(R.drawable.button_rounded_red);
+                    clickedButton.setTextColor(getResources().getColor(android.R.color.white));
+                }
+
                 updateSlotSelection();
             }
         };
 
-        chkMorning.setOnClickListener(slotClickListener);
-        chkNight.setOnClickListener(slotClickListener);
-        chkEvening.setOnClickListener(slotClickListener);
+        btnMorning.setOnClickListener(slotClickListener);
+        btnAfternoon.setOnClickListener(slotClickListener);
+        btnEvening.setOnClickListener(slotClickListener);
 
         btnProceedNutrition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Slot_Booking_Activity.this, Nutrition_Activity.class);
+                Intent intent = new Intent(Slot_Booking_Activity.this, NutritionActivity.class);
                 intent.putExtra("workout_name", workoutName);
                 intent.putStringArrayListExtra("selected_slots", selectedSlots);
                 startActivity(intent);
@@ -81,7 +89,7 @@ public class Slot_Booking_Activity extends AppCompatActivity {
         btnConfirmWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Slot_Booking_Activity.this, Workout_Activity.class);
+                Intent intent = new Intent(Slot_Booking_Activity.this, WorkoutSummaryActivity.class);
                 intent.putExtra("workout_name", workoutName);
                 intent.putStringArrayListExtra("selected_slots", selectedSlots);
                 intent.putExtra("nutrition_total", 0.0);
@@ -92,24 +100,16 @@ public class Slot_Booking_Activity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void updateSlotSelection() {
-        selectedSlots.clear();
-        selectedSlotCount = 0;
-
-        if (chkMorning.isChecked()) {
-            selectedSlots.add("Morning");
-            selectedSlotCount++;
-        }
-        if (chkNight.isChecked()) {
-            selectedSlots.add("Afternoon");
-            selectedSlotCount++;
-        }
-        if (chkEvening.isChecked()) {
-            selectedSlots.add("Evening");
-            selectedSlotCount++;
-        }
-
+        selectedSlotCount = selectedSlots.size();
         txtSelectedSlots.setText("Selected Slots: " + selectedSlotCount);
-        btnProceedNutrition.setEnabled(selectedSlotCount > 0);
+        
+        if (selectedSlotCount > 0) {
+            btnProceedNutrition.setEnabled(true);
+            btnProceedNutrition.setBackgroundResource(R.drawable.button_rounded_red);
+        } else {
+            btnProceedNutrition.setEnabled(false);
+            btnProceedNutrition.setBackgroundResource(R.drawable.button_rounded_gray);
+        }
     }
 
 

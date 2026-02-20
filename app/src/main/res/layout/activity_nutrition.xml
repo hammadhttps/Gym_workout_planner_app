@@ -1,10 +1,464 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Nutrition_Activity">
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".NutritionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nutrition"
+            android:textColor="@color/primary_red"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:textColor="@color/primary_red"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@drawable/button_border"
+            android:gravity="center"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!-- Protein Shake Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgProtein"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/protein_shake"
+                android:contentDescription="Protein Shake"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/txtProteinName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein Shake"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtProteinPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$8.99"
+                    android:textColor="@color/primary_red"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_gray"
+                android:padding="4dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnProteinMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtProteinQty"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnProteinPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Energy Bar Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgBar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/energy_drink"
+                android:contentDescription="Energy Bar"
+                android:scaleType="centerCrop"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/txtBarName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Energy Bar"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtBarPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$3.49"
+                    android:textColor="@color/primary_red"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_gray"
+                android:padding="4dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnBarMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtBarQty"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnBarPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Salad Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgSalad"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/salad"
+                android:contentDescription="Salad"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/txtSaladName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salad"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSaladPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$6.99"
+                    android:textColor="@color/primary_red"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_gray"
+                android:padding="4dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnSaladMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtSaladQty"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnSaladPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Juice Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgJuice"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/juice"
+                android:contentDescription="Juice"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/txtJuiceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Juice"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtJuicePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$4.99"
+                    android:textColor="@color/primary_red"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_gray"
+                android:padding="4dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnJuiceMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtJuiceQty"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnJuicePlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary_red"
+                    android:gravity="center"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Total and Confirm Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textColor="@color/primary_red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="CONFIRM"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary_red"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

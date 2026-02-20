@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._21l_5812_A1">
         <activity
-            android:name=".WorkOut_Summary"
+            android:name=".WorkoutSummaryActivity"
             android:exported="false" />
         <activity
-            android:name=".Nutrition_Activity"
+            android:name=".NutritionActivity"
             android:exported="false" />
         <activity
             android:name=".Slot_Booking_Activity"
@@ -26,11 +31,7 @@
         <activity
             android:name=".Activity_onboarding"
             android:exported="false" />
-        <activity
-            android:name=".Rotate_logo"
-            android:exported="false"
-            android:label="@string/title_activity_rotate_logo"
-            android:theme="@style/Theme._21l_5812_A1" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

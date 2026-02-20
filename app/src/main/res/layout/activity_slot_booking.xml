@@ -7,8 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".Slot_Booking_Activity"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Slot Booking"
+        android:background="@color/primary_red"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtWorkoutName"
@@ -16,98 +28,51 @@
         android:layout_height="wrap_content"
         android:text="Workout: "
         android:textSize="20sp"
-        android:textColor="@color/primary_red"
+        android:textColor="@color/black"
         android:textStyle="bold"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="24dp"
         tools:ignore="HardcodedText" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Slot"
-        android:textSize="18sp"
+
+    <Button
+        android:id="@+id/btnMorning"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded_white"
+        android:text="Morning"
         android:textColor="@color/black"
-        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
         tools:ignore="HardcodedText" />
 
-    <LinearLayout
-        android:id="@+id/layoutEvening"
+    <Button
+        android:id="@+id/btnAfternoon"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp"
-        android:background="@color/light_red"
-        android:layout_marginBottom="8dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded_white"
+        android:text="Afternoon"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Morning"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            tools:ignore="HardcodedText" />
-
-        <CheckBox
-            android:id="@+id/chkEvening"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/primary_red"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layoutNight"
+    <Button
+        android:id="@+id/btnEvening"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp"
-        android:background="@color/light_red"
-        android:layout_marginBottom="8dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Evening"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            tools:ignore="HardcodedText" />
-
-        <CheckBox
-            android:id="@+id/chkNight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/primary_red"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layoutMorning"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp"
-        android:background="@color/light_red"
-        android:layout_marginBottom="8dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Night"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            tools:ignore="HardcodedText" />
-
-        <CheckBox
-            android:id="@+id/chkMorning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/primary_red"/>
-
-    </LinearLayout>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_rounded_white"
+        android:text="Evening"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
 
 
     <TextView
@@ -117,6 +82,7 @@
         android:text="Selected Slots: 0"
         android:textSize="16sp"
         android:textColor="@color/gray"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
         tools:ignore="HardcodedText" />
@@ -125,8 +91,10 @@
         android:id="@+id/btnProceedNutrition"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="PROCEED TO NUTRITION"
-        android:backgroundTint="@color/primary_red"
+        android:background="@drawable/button_rounded_red"
         android:textColor="@color/white"
         android:enabled="false"
         android:layout_marginBottom="8dp"
@@ -136,8 +104,10 @@
         android:id="@+id/btnConfirmWorkout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="CONFIRM WORKOUT"
-        android:backgroundTint="@color/dark_red"
+        android:background="@drawable/button_rounded_red"
         android:textColor="@color/white"
         tools:ignore="HardcodedText" />
 

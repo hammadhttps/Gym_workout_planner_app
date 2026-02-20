@@ -8,9 +8,6 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Workout_Activity extends AppCompatActivity {
 
@@ -20,63 +17,63 @@ public class Workout_Activity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_workout);
 
-        Button btnChestBook = findViewById(R.id.btnChestBook);
-        Button btnChestTutorial = findViewById(R.id.btnChestTutorial);
+        Button btnLegPressBook = findViewById(R.id.btnLegPressBook);
+        Button btnLegPressTutorial = findViewById(R.id.btnLegPressTutorial);
 
-        Button btnBicep_Work = findViewById(R.id.btnbicep);
-        Button Bicep_Tutorial = findViewById(R.id.btnbicep_tut);
+        Button btnLatPulldownBook = findViewById(R.id.btnLatPulldownBook);
+        Button btnLatPulldownTutorial = findViewById(R.id.btnLatPulldownTutorial);
 
-        Button Arms_Workout = findViewById(R.id.btnArmsBook);
-        Button btnArms_Tutorial = findViewById(R.id.btnArmsTutorial);
+        Button btnChestPressBook = findViewById(R.id.btnChestPressBook);
+        Button btnChestPressTutorial = findViewById(R.id.btnChestPressTutorial);
 
 
 
-        btnChestBook.setOnClickListener(new View.OnClickListener() {
+        btnLegPressBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Workout_Activity.this, Slot_Booking_Activity.class);
-                intent.putExtra("workout_name", "Chest Workout");
+                intent.putExtra("workout_name", "Leg Press");
                 startActivity(intent);
             }
         });
 
-        btnBicep_Work.setOnClickListener(new View.OnClickListener() {
+        btnLatPulldownBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Workout_Activity.this, Slot_Booking_Activity.class);
-                intent.putExtra("workout_name", "Biceps Workout");
+                intent.putExtra("workout_name", "Lat Pulldown");
                 startActivity(intent);
             }
         });
 
-        Arms_Workout.setOnClickListener(new View.OnClickListener() {
+        btnChestPressBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Workout_Activity.this, Slot_Booking_Activity.class);
-                intent.putExtra("workout_name", "Arms Complete Workout");
+                intent.putExtra("workout_name", "Chest Press");
                 startActivity(intent);
             }
         });
 
         // Tutorial click listeners (Implicit Intents to YouTube)
-        btnChestTutorial.setOnClickListener(new View.OnClickListener() {
+        btnLegPressTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openYouTubeTutorial("Back Workout");
+                openYouTubeTutorial("Leg Press tutorial");
             }
         });
 
-        btnArms_Tutorial.setOnClickListener(new View.OnClickListener() {
+        btnLatPulldownTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openYouTubeTutorial("Arms workout");
+                openYouTubeTutorial("Lat Pulldown tutorial");
             }
         });
 
-        Bicep_Tutorial.setOnClickListener(new View.OnClickListener() {
+        btnChestPressTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openYouTubeTutorial("Bicep workout");
+                openYouTubeTutorial("Chest Press tutorial");
             }
         });
     }
