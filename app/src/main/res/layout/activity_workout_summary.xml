@@ -132,6 +132,7 @@
             android:layout_height="56dp"
             android:text="SEND PLAN"
             android:background="@drawable/button_rounded_red"
+            app:backgroundTint="@null"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -142,8 +143,9 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="SEND SMS"
-            android:background="@drawable/button_rounded_light_gray"
-            android:textColor="@color/black"
+            android:background="@drawable/button_rounded_dark_red"
+            app:backgroundTint="@null"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
